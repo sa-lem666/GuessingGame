@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Salem Hernandez">
+    
+    <title>Guessing Game</title>
+  </head>
+  <body>
+    <h1 id="number">num</h1>
+    <script>
+        const randomNum = Math.floor(Math.random() * 10) + 1;
+        let guessCount = 0;
+        let playerGuess = prompt("Guess a Number between 1 and 10.");
+
+        while(playerGuess != randomNum){
+            if(playerGuess > randomNum) {
+                guessCount++;
+                playerGuess = prompt("Your guess was too high, guess again.");
+            }
+            else if(playerGuess < randomNum){
+                guessCount++;
+                playerGuess = prompt("Your guess was too low, guess again.");
+            }
+            else{
+                continue;
+            }
+        }
+
+        alert("You guessed it in " + guessCount + " guesses!");
+        document.getElementById("number").innerHTML = randomNum;
+
+    </script>
+ </body>
+</html>
